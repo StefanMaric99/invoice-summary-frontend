@@ -1,3 +1,4 @@
+import Link from "next/link"
 export const Nav = () => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
@@ -12,18 +13,18 @@ export const Nav = () => {
           <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
         </svg>
         <span className="font-semibold text-xl tracking-tight">
-          Tailwind CSS
+          Invoice Tracker
         </span>
       </div>
 
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
-          <a
-            href="#responsive-header"
+          <Link
+            href="/user"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
-            Docs
-          </a>
+            User
+          </Link>
         </div>
       </div>
     </nav>
