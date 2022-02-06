@@ -1,27 +1,18 @@
 import {UserCard} from "../components/UserCard";
+import { API_USERS } from "../constants";
 
-export default function User() {
-  const db = [
-    {
-      id: 1,
-      name: 'John Doe',
-      age: 19,
-    },
-    {
-      id: 2,
-      name: 'Mike Doe',
-      age: 20,
-    },
-  ]
+export default function User(props) {
 
-  console.log('db', db)
+  const { users } = props;
 
+  console.log(API_USERS)
+    console.log(users)
   return (
     <div>
       <h1>User</h1>
 
       <div className="w-full p-5">
-        {db.map((user, index) => {
+        {users.map((user, index) => {
           return (
             <UserCard  key={index} user={user} />
           )
@@ -29,4 +20,23 @@ export default function User() {
       </div>
     </div>
   )
+
 }
+
+
+
+
+
+export const getStaticProps = async() => {
+    console.log(API_USERS)
+  const res = await fetch(API_USERS);
+  const users = await res.json();
+
+  return {
+    props: {
+      users
+    }
+  }
+
+}
+

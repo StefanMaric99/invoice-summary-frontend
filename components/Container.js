@@ -1,5 +1,5 @@
 import { Nav } from './Nav'
-import Head from 'next/head '
+import Head from 'next/head'
 export default function Container({ children }) {
   return (
     <div>
